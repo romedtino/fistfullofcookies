@@ -1,4 +1,20 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Ghost</title><description>Just a blogging platform.</description><link>https://fistfullofcookies-romedtino.c9users.io/</link><generator>Ghost 0.11</generator><lastBuildDate>Wed, 26 Jul 2017 06:20:26 GMT</lastBuildDate><atom:link href="https://fistfullofcookies-romedtino.c9users.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Welcome to Ghost</title><description>&lt;p&gt;You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at &lt;code&gt;&amp;lt;your blog URL&amp;gt;/ghost/&lt;/code&gt;. When you arrive, you can select this post from a list&lt;/p&gt;</description><link>https://fistfullofcookies-romedtino.c9users.io/welcome-to-ghost/</link><guid isPermaLink="false">8625d4e8-2321-4c60-a868-983ea0a33957</guid><category>Getting Started</category><dc:creator>Ghost Owner</dc:creator><pubDate>Wed, 26 Jul 2017 06:03:25 GMT</pubDate><content:encoded>&lt;p&gt;You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at &lt;code&gt;&amp;lt;your blog URL&amp;gt;/ghost/&lt;/code&gt;. When you arrive, you can select this post from a list on the left and see a preview of it on the right. Click the little pencil icon at the top of the preview to edit this post and read the next section!&lt;/p&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Fistful of Cookies</title><description>Thoughts, stories and ideas.</description><link>https://fistfullofcookies-romedtino.c9users.io/</link><generator>Ghost 0.11</generator><lastBuildDate>Wed, 26 Jul 2017 06:28:58 GMT</lastBuildDate><atom:link href="https://fistfullofcookies-romedtino.c9users.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Hello World and Ghosts!</title><description>&lt;p&gt;Well this is interesting. &lt;/p&gt;
+
+&lt;p&gt;A full fledged suite that is tailored to creating blogs. Neat!&lt;/p&gt;
+
+&lt;p&gt;I'm hoping I will be posting here more often so stay tuned!&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Jerome&lt;/li&gt;
+&lt;/ul&gt;</description><link>https://fistfullofcookies-romedtino.c9users.io/hello-world-and-ghosts/</link><guid isPermaLink="false">dda6a12e-8cf1-438f-91db-4ee5ecbc50e1</guid><dc:creator>Jerome</dc:creator><pubDate>Wed, 26 Jul 2017 06:27:48 GMT</pubDate><content:encoded>&lt;p&gt;Well this is interesting. &lt;/p&gt;
+
+&lt;p&gt;A full fledged suite that is tailored to creating blogs. Neat!&lt;/p&gt;
+
+&lt;p&gt;I'm hoping I will be posting here more often so stay tuned!&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Jerome&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title>Welcome to Ghost</title><description>&lt;p&gt;You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at &lt;code&gt;&amp;lt;your blog URL&amp;gt;/ghost/&lt;/code&gt;. When you arrive, you can select this post from a list&lt;/p&gt;</description><link>https://fistfullofcookies-romedtino.c9users.io/welcome-to-ghost/</link><guid isPermaLink="false">8625d4e8-2321-4c60-a868-983ea0a33957</guid><category>Getting Started</category><dc:creator>Jerome</dc:creator><pubDate>Wed, 26 Jul 2017 06:03:25 GMT</pubDate><content:encoded>&lt;p&gt;You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at &lt;code&gt;&amp;lt;your blog URL&amp;gt;/ghost/&lt;/code&gt;. When you arrive, you can select this post from a list on the left and see a preview of it on the right. Click the little pencil icon at the top of the preview to edit this post and read the next section!&lt;/p&gt;
 
 &lt;h2 id="gettingstarted"&gt;Getting Started&lt;/h2&gt;
 
