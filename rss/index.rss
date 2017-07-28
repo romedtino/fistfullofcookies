@@ -4,11 +4,103 @@ Well, hopefully thoughts, stories and ideas.
 
 About what?
 
-Nothing specific exactly! Mostly tech but anything goes!</description><link>https://fistfulofcookies-romedtino.c9users.io/</link><generator>Ghost 0.11</generator><lastBuildDate>Thu, 27 Jul 2017 03:47:23 GMT</lastBuildDate><atom:link href="https://fistfulofcookies-romedtino.c9users.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Ghost for GitHub Pages Using Cloud 9</title><description>&lt;p&gt;test&lt;/p&gt;
+Nothing specific exactly! Mostly tech but anything goes!</description><link>https://fistfulofcookies-romedtino.c9users.io/</link><generator>Ghost 0.11</generator><lastBuildDate>Fri, 28 Jul 2017 04:59:49 GMT</lastBuildDate><atom:link href="https://fistfulofcookies-romedtino.c9users.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Ghost for GitHub Pages Using Cloud 9</title><description>&lt;h3 id="soyouwanttostartablog"&gt;So you want to start a blog?&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href="https://stefanscherer.github.io/setup-ghost-for-github-pages/"&gt;https://stefanscherer.github.io/setup-ghost-for-github-pages/&lt;/a&gt;&lt;/p&gt;</description><link>https://fistfulofcookies-romedtino.c9users.io/untitled/</link><guid isPermaLink="false">d2d90412-f8e9-4464-be59-683952d56893</guid><dc:creator>Jerome Tolentino</dc:creator><pubDate>Thu, 27 Jul 2017 03:47:07 GMT</pubDate><media:content url="https://fistfulofcookies-romedtino.c9users.io/content/images/2017/07/IMG_20161217_185039.jpg" medium="image"/><content:encoded>&lt;img src="https://fistfulofcookies-romedtino.c9users.io/content/images/2017/07/IMG_20161217_185039.jpg" alt="Ghost for GitHub Pages Using Cloud 9"&gt;&lt;p&gt;test&lt;/p&gt;
+&lt;p&gt;Yes. Yes I do. Although, I had no idea where to start (even though there's thousands of resources on &lt;a href="https://fistfulofcookies-romedtino.c9users.io/untitled/www.lmgtfy.com"&gt;Google&lt;/a&gt;). I know I wanted &lt;em&gt;free&lt;/em&gt; hosting because I am beyond cheap. I know I wanted the website to at least have SSL because&lt;/p&gt;</description><link>https://fistfulofcookies-romedtino.c9users.io/untitled/</link><guid isPermaLink="false">d2d90412-f8e9-4464-be59-683952d56893</guid><category>ghost</category><category>cloud9</category><category>c9</category><category>github</category><dc:creator>Jerome Tolentino</dc:creator><pubDate>Thu, 27 Jul 2017 03:47:07 GMT</pubDate><content:encoded>&lt;h3 id="soyouwanttostartablog"&gt;So you want to start a blog?&lt;/h3&gt;
 
-&lt;p&gt;&lt;a href="https://stefanscherer.github.io/setup-ghost-for-github-pages/"&gt;https://stefanscherer.github.io/setup-ghost-for-github-pages/&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title>Hello World and Ghosts!</title><description>&lt;p&gt;Well this is interesting. &lt;/p&gt;
+&lt;p&gt;Yes. Yes I do. Although, I had no idea where to start (even though there's thousands of resources on &lt;a href="https://fistfulofcookies-romedtino.c9users.io/untitled/www.lmgtfy.com"&gt;Google&lt;/a&gt;). I know I wanted &lt;em&gt;free&lt;/em&gt; hosting because I am beyond cheap. I know I wanted the website to at least have SSL because you owe it to yourself to have &lt;em&gt;some&lt;/em&gt; level of &lt;del&gt;dignity&lt;/del&gt; security. Hey, cool! &lt;a href="https://pages.github.com"&gt;GitHub Pages&lt;/a&gt; has exactly what I am looking for! Now what blog service do I turn to?&lt;/p&gt;
+
+&lt;p&gt;I mean you probably have heard of a plethora of different &lt;em&gt;blog services&lt;/em&gt; such as Xanga or LiveJournal just to name a few of the more popular ones ;). However, the ones that caught my eye when I was perusing the depths of the internet were Tumblr, WordPress, Blogger, Jekyll and Ghost. If you can't tell, I did opt for Ghost for these reasons:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Tumblr&lt;/strong&gt; - There's just too much going on here and I can't take it seriously. I understand 
+ the reasons why &lt;em&gt;certain&lt;/em&gt; people choose Tumblr (questionable if that was Tumblr's initial intention) and it's really more of getting away from the blog mentality with just sharing images, a quick prose or something that doesn't necessarily need to be chunky. In this day and age where people want their information quick and gritty, Tumblr has your back. Also for my use case, certain proxies I have played with for some reason like to block Tumblr so that's just a no go.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;WordPress&lt;/strong&gt; - WordPress by WordPress&lt;strong&gt;.org&lt;/strong&gt; is actually pretty nice but it seems really heavy and cumbersome. I wanted something &lt;em&gt;extremely&lt;/em&gt; simple (even though I have probably convoluted my process) but also customizable.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Blogger&lt;/strong&gt; - You have to tie this to a Google account and even though I almost have &lt;strong&gt;everything&lt;/strong&gt; tied to Google, I wanted to go a different route. Blogger is also pretty different where in that you don't have the ability to host the server on your own. &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Jekyll&lt;/strong&gt; - You can host on your own, it is open source, it is &lt;em&gt;meant&lt;/em&gt; for actually generating blogs or static pages, so why did I not choose Jekyll? Honestly, it's because I tried Ghost first and haven't had the chance to try Jekyll. Also, I have used Node.js before and not really Ruby so I didn't want to learn something on top of another.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Ghost&lt;/strong&gt; - Looks cool, decent documentation and examples to get started, and it doesn't seem too hard to set up. Let's do it!&lt;/p&gt;
+
+&lt;h3 id="creatingyourblog"&gt;Creating your blog&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;GitHub Pages&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;GitHub Pages is awesome. It's a place where you can host static data for either a project or in our case, a blog!&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Create a GitHub Pages site &lt;a href="https://pages.github.com/"&gt;using these directions&lt;/a&gt;. &lt;br&gt;
+&lt;ul&gt;&lt;li&gt;Note: Try to use your main account for your blog or prepare to be savvy and do some cleanup before posting your blog (e.g. if your GitHub username is benfranklin, host with your main github pages: &lt;code&gt;benfranklin.github.io&lt;/code&gt; as opposed to &lt;code&gt;benfranklin.github.io/bensblogaboutbells&lt;/code&gt;)&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Leave it blank for now and there's no need to apply any theme since you're most likely going to find your own Ghost theme.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;C9.io&lt;/strong&gt;
+&lt;img src="https://static.c9.io/nc-3.1.3702-b43a5b7f-wf/static/plugins/c9.profile/static/images/cloud9-logo.svg" alt="C9.io awesome!"&gt;
+Cloud9 is also awesome. It's literally a free online linux workspace you can almost do anything with. I have used it to debug/create my &lt;a href="https://romedtino.github.io"&gt;personal website&lt;/a&gt; as well as test my &lt;a href="https://play.google.com/store/apps/details?id=com.expandedlabs.kingscupcast&amp;amp;hl=en"&gt;Chromecast app - Kings Cup Cast&lt;/a&gt;. Both so far have been &lt;code&gt;javascript&lt;/code&gt; but you can do A LOT more from &lt;code&gt;C++&lt;/code&gt;, &lt;code&gt;Java&lt;/code&gt;, &lt;code&gt;Python&lt;/code&gt;, etc. The only scary thing here is that they initially ask you for a credit card despite having a free version so watch out for that.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://c9.io/"&gt;https://c9.io/&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;Create a new workspace BUT don't tie it to your GitHub account just yet.  &lt;/li&gt;
+&lt;li&gt;C9.io uses Node.js! but by default it uses v4 while you'll need at least 6. So go ahead and get those and set it as default &lt;br&gt;
+&lt;ol&gt;&lt;li&gt;&lt;code&gt;nvm install 6&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;nvm alias default 6&lt;/code&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;Ghost&lt;/strong&gt;
+&lt;img src="https://www.cmscritic.com/site/assets/files/5805/ghost_logo_big.png" alt="Ghost.org"&gt;
+1. You can cheat and just install it via  &lt;code&gt;npm install ghost&lt;/code&gt; BUT for some reason I went the hard way and compiled it from source. &lt;br&gt;
+1. Visit &lt;a href="https://ghost.org/developers/"&gt;https://ghost.org/developers/&lt;/a&gt; and grab the zip. By the time of my writing it was &lt;code&gt;wget https://github.com/TryGhost/Ghost/releases/download/1.0.2/Ghost-1.0.2.zip&lt;/code&gt; &lt;br&gt;
+1. &lt;code&gt;unzip Ghost*.zip&lt;/code&gt; &lt;br&gt;
+1. &lt;code&gt;npm install --production&lt;/code&gt; &lt;br&gt;
+ 1. If you run into any conflicts (I know I did, feel free to just &lt;code&gt;npm uninstall&lt;/code&gt; that dependency and use the one Ghost needs. If you need that specific version, then why are you using the same c9 workspace?! :O Make a new one!) You might also need &lt;code&gt;apt get python-devel&lt;/code&gt;.
+1. Once ghost is installed, you would have to edit &lt;code&gt;ghost/config.js&lt;/code&gt; for cloud 9 specificities that deal with "localhost" and ghosts default URLs. &lt;br&gt;
+ 1. Change &lt;code&gt;http//url: 'http://localhost:2368'&lt;/code&gt; to &lt;code&gt;url: 'https://' + process.env.C9_HOSTNAME&lt;/code&gt;
+ 1. Change &lt;code&gt;host: '127.0.0.1'&lt;/code&gt; to &lt;code&gt;host: process.env.IP&lt;/code&gt;
+ 1. Change &lt;code&gt;port: 2368&lt;/code&gt; to &lt;code&gt;port: process.env.PORT&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Now you're all set!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Running Ghost&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Once ghost is up and running, simply do &lt;code&gt;npm start&lt;/code&gt; and hopefully ghost starts running! Just simply visit your &lt;code&gt;https://WORKSPACE-USERNAME.c9users.io&lt;/code&gt; and you should see a Ghost Splash screen! Then just visit &lt;code&gt;https://WORKSPACE-USERNAME.c9users.io/ghost&lt;/code&gt; to login. &lt;/p&gt;
+
+&lt;p&gt;Phew!&lt;/p&gt;
+
+&lt;h3 id="publishingtogithub"&gt;Publishing to GitHub&lt;/h3&gt;
+
+&lt;p&gt;So you've gotten your blog all nice and nifty, now you want to publish it to your GitHub page. What's nice about c9 is that it also comes with Python pre-installed!&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Install this nifty tool someone made that transcribes Ghost blogs into static pages. &lt;br&gt;
+&lt;ol&gt;&lt;li&gt;&lt;code&gt;pip install buster&lt;/code&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;Now you're ready to summon the GitHub page you had previously created. I decided to put mine within the ghost installation as this makes the next few steps easier (less command line arguments) &lt;br&gt;
+&lt;ol&gt;&lt;li&gt;&lt;code&gt;git clone git@github.com:username/username.github.io.git static&lt;/code&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;Now let buster generate the static pages &lt;br&gt;
+&lt;ol&gt;&lt;li&gt;&lt;code&gt;buster generate --domain=https://WORKSPACE-USERNAME.c9users.io&lt;/code&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;Then deploy! &lt;br&gt;
+&lt;ol&gt;&lt;li&gt;&lt;code&gt;buster deploy&lt;/code&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;If things worked out correctly, it should have checked it all in your GitHub page! Yay!&lt;/p&gt;
+
+&lt;h3 id="addressingrandomproblems"&gt;Addressing random problems&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Problem: You decided to use a project page as opposed to your main page on GitHub to host your blog.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I had this exact problem. &lt;code&gt;buster&lt;/code&gt; unfortunately, is not perfect. Currently my &lt;code&gt;/content&lt;/code&gt; directory assumes it sits in the root but this isn't always the case (e.g. &lt;code&gt;http://username.github.io/myawesomeblog/content&lt;/code&gt;)&lt;/p&gt;
+
+&lt;p&gt;My solution is pretty hacky for my taste but for now, it works.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;sed -i 's:="/content:="/myawseomeblog/content:' ./static/index.html&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Yea, it's a &lt;code&gt;sed&lt;/code&gt; command and I kind of don't like it since I am post processing the output which makes me question if my approach was worth it. I did wrap most of these in my &lt;code&gt;bash_aliases&lt;/code&gt; to save more time. Nevertheless, it all seems to work! :D&lt;/p&gt;
+
+&lt;p&gt;Thanks for reading!&lt;/p&gt;
+
+&lt;p&gt;Resources: &lt;br&gt;
+Ghost + Github: &lt;br&gt;
+&lt;a href="https://stefanscherer.github.io/setup-ghost-for-github-pages/"&gt;https://stefanscherer.github.io/setup-ghost-for-github-pages/&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title>Hello World and Ghosts!</title><description>&lt;p&gt;Well this is interesting. &lt;/p&gt;
 
 &lt;p&gt;A full fledged suite that is tailored to creating blogs. Neat!&lt;/p&gt;
 

@@ -8,7 +8,7 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
-    <link rel="stylesheet" type="text/css" href="assets/styles/main.css?v=e659de6639" />
+    <link rel="stylesheet" type="text/css" href="assets/styles/main.css?v=2c70900672" />
 
     <link rel="canonical" href="subscribe" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
@@ -21,7 +21,7 @@
     <meta name="twitter:title" content="Fistful of Cookies" />
     <meta name="twitter:url" content="https://fistfulofcookies-romedtino.c9users.io/subscribe/" />
     
-    <script type="text/javascript" src="shared/ghost-url.js?v=e659de6639"></script>
+    <script type="text/javascript" src="shared/ghost-url.js?v=2c70900672"></script>
 <script type="text/javascript">
 ghost.init({
 	clientId: "ghost-frontend",
@@ -160,7 +160,7 @@ ghost.init({
         </span>
     </a>
 
-    <script src="assets/scripts/main.js?v=e659de6639"></script>
+    <script src="assets/scripts/main.js?v=2c70900672"></script>
 
     <script type="text/javascript">WebFontConfig ={google:{families:['Roboto:300,400,500','Roboto+Mono']}};(function(){var wf=document.createElement('script');wf.src='https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';wf.type='text/javascript';wf.async='true';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(wf,s);})();</script>
 </body>
