@@ -1,0 +1,977 @@
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Ghost for GitHub Pages Using Cloud 9</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <link rel="shortcut icon" href="../../favicon.ico">
+
+    <link rel="canonical" href="../index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta property="og:site_name" content="Fistful of Cookies">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Ghost for GitHub Pages Using Cloud 9">
+    <meta property="og:description" content="So you want to start a blog? Yes. Yes I do. Although, I had no idea where to start (even though there's thousands of resources on Google). I know I wanted free hosting because I am beyond cheap. I know I wanted the website to at least have SSL because">
+    <meta property="og:url" content="https://fistfulofcookies-romedtino.c9users.io/ghostgithubcloud9/">
+    <meta property="article:published_time" content="2017-07-27T03:47:07.000Z">
+    <meta property="article:modified_time" content="2017-11-15T05:53:41.000Z">
+    <meta property="article:tag" content="ghost">
+    <meta property="article:tag" content="cloud9">
+    <meta property="article:tag" content="c9">
+    <meta property="article:tag" content="github">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Ghost for GitHub Pages Using Cloud 9">
+    <meta name="twitter:description" content="So you want to start a blog? Yes. Yes I do. Although, I had no idea where to start (even though there's thousands of resources on Google). I know I wanted free hosting because I am beyond cheap. I know I wanted the website to at least have SSL because">
+    <meta name="twitter:url" content="https://fistfulofcookies-romedtino.c9users.io/ghostgithubcloud9/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Jerome Tolentino">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="ghost, cloud9, c9, github">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Fistful of Cookies",
+        "logo": "https://fistfulofcookies-romedtino.c9users.io/content/images/2017/11/IMG_20161219_102228.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Jerome Tolentino",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://fistfulofcookies-romedtino.c9users.io/content/images/2017/07/Untitled-1-more--Custom-.png",
+            "width": 512,
+            "height": 512
+        },
+        "url": "https://fistfulofcookies-romedtino.c9users.io/author/romedtino/",
+        "sameAs": [
+            "https://romedtino.github.io"
+        ],
+        "description": "Jerome: Hi everyone. It&#x27;s my first day here today and yes, I am addicted to tech.\nTAA: Hi Jerome"
+    },
+    "headline": "Ghost for GitHub Pages Using Cloud 9",
+    "url": "https://fistfulofcookies-romedtino.c9users.io/ghostgithubcloud9/",
+    "datePublished": "2017-07-27T03:47:07.000Z",
+    "dateModified": "2017-11-15T05:53:41.000Z",
+    "keywords": "ghost, cloud9, c9, github",
+    "description": "So you want to start a blog? Yes. Yes I do. Although, I had no idea where to start (even though there&#x27;s thousands of resources on Google). I know I wanted free hosting because I am beyond cheap. I know I wanted the website to at least have SSL because",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://fistfulofcookies-romedtino.c9users.io"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.11">
+    <link rel="alternate" type="application/rss+xml" title="Fistful of Cookies" href="../../rss.1">
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,600,400">
+    <style amp-custom>
+        /* ==========================================================================
+           Table of Contents
+           ========================================================================== */
+
+        /*
+
+            0. Normalize
+            1. General
+            2. Utilities
+            3. AMP Post
+            4. Footer
+
+        */
+
+        /* ==========================================================================
+           0. normalize.css v3.0.3 | MIT License | git.io/normalize | (minified)
+           ========================================================================== */
+
+        html {
+            font-family: sans-serif;
+
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+        body {
+            margin: 0;
+        }
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        main,
+        menu,
+        nav,
+        section,
+        summary {
+            display: block;
+        }
+        audio,
+        canvas,
+        progress,
+        video {
+            display: inline-block;
+            vertical-align: baseline;
+        }
+        audio:not([controls]) {
+            display: none;
+            height: 0;
+        }
+        [hidden],
+        template {
+            display: none;
+        }
+        a {
+            background-color: transparent;
+        }
+        a:active,
+        a:hover {
+            outline: 0;
+        }
+        abbr[title] {
+            border-bottom: 1px dotted;
+        }
+        b,
+        strong {
+            font-weight: bold;
+        }
+        dfn {
+            font-style: italic;
+        }
+        h1 {
+            margin: 0.67em 0;
+            font-size: 2em;
+        }
+        mark {
+            background: #ff0;
+            color: #000;
+        }
+        small {
+            font-size: 80%;
+        }
+        sub,
+        sup {
+            position: relative;
+            vertical-align: baseline;
+            font-size: 75%;
+            line-height: 0;
+        }
+        sup {
+            top: -0.5em;
+        }
+        sub {
+            bottom: -0.25em;
+        }
+        img {
+            border: 0;
+        }
+        amp-img {
+            border: 0;
+        }
+        svg:not(:root) {
+            overflow: hidden;
+        }
+        figure {
+            margin: 1em 40px;
+        }
+        hr {
+            box-sizing: content-box;
+            height: 0;
+        }
+        pre {
+            overflow: auto;
+        }
+        code,
+        kbd,
+        pre,
+        samp {
+            font-family: monospace, monospace;
+            font-size: 1em;
+        }
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            margin: 0;
+            color: inherit;
+            font: inherit;
+        }
+        button {
+            overflow: visible;
+        }
+        button,
+        select {
+            text-transform: none;
+        }
+        button,
+        html input[type="button"],
+        input[type="reset"],
+        input[type="submit"] {
+            cursor: pointer;
+
+            -webkit-appearance: button;
+        }
+        button[disabled],
+        html input[disabled] {
+            cursor: default;
+        }
+        button::-moz-focus-inner,
+        input::-moz-focus-inner {
+            padding: 0;
+            border: 0;
+        }
+        input {
+            line-height: normal;
+        }
+        input[type="checkbox"],
+        input[type="radio"] {
+            box-sizing: border-box;
+            padding: 0;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            height: auto;
+        }
+        input[type="search"] {
+            -webkit-appearance: textfield;
+        }
+        input[type="search"]::-webkit-search-cancel-button,
+        input[type="search"]::-webkit-search-decoration {
+            -webkit-appearance: none;
+        }
+        fieldset {
+            margin: 0 2px;
+            padding: 0.35em 0.625em 0.75em;
+            border: 1px solid #c0c0c0;
+        }
+        legend {
+            padding: 0;
+            border: 0;
+        }
+        textarea {
+            overflow: auto;
+        }
+        optgroup {
+            font-weight: bold;
+        }
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+        td,
+        th {
+            padding: 0;
+        }
+
+
+        /* ==========================================================================
+           1. General - Setting up some base styles
+           ========================================================================== */
+
+        html {
+            max-height: 100%;
+            height: 100%;
+            font-size: 62.5%;
+
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+
+        body {
+            max-height: 100%;
+            height: 100%;
+            color: #3a4145;
+            background: #f4f8fb;
+            letter-spacing: 0.01rem;
+            font-family: "Merriweather", serif;
+            font-size: 1.8rem;
+            line-height: 1.75em;
+            text-rendering: geometricPrecision;
+
+            -webkit-font-feature-settings: "kern" 1;
+            -moz-font-feature-settings: "kern" 1;
+            -o-font-feature-settings: "kern" 1;
+        }
+
+        ::-moz-selection {
+            background: #d6edff;
+        }
+
+        ::selection {
+            background: #d6edff;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0 0 0.3em 0;
+            color: #2e2e2e;
+            font-family: "Open Sans", sans-serif;
+            line-height: 1.15em;
+            text-rendering: geometricPrecision;
+
+            -webkit-font-feature-settings: "dlig" 1, "liga" 1, "lnum" 1, "kern" 1;
+            -moz-font-feature-settings: "dlig" 1, "liga" 1, "lnum" 1, "kern" 1;
+            -o-font-feature-settings: "dlig" 1, "liga" 1, "lnum" 1, "kern" 1;
+        }
+
+        h1 {
+            text-indent: -2px;
+            letter-spacing: -1px;
+            font-size: 2.6rem;
+        }
+
+        h2 {
+            letter-spacing: 0;
+            font-size: 2.4rem;
+        }
+
+        h3 {
+            letter-spacing: -0.6px;
+            font-size: 2.1rem;
+        }
+
+        h4 {
+            font-size: 1.9rem;
+        }
+
+        h5 {
+            font-size: 1.8rem;
+        }
+
+        h6 {
+            font-size: 1.8rem;
+        }
+
+        a {
+            color: #4a4a4a;
+        }
+
+        a:hover {
+            color: #111;
+        }
+
+        p,
+        ul,
+        ol,
+        dl {
+            margin: 0 0 2.5rem 0;
+            font-size: 1.5rem;
+            text-rendering: geometricPrecision;
+
+            -webkit-font-feature-settings: "liga" 1, "onum" 1, "kern" 1;
+            -moz-font-feature-settings: "liga" 1, "onum" 1, "kern" 1;
+            -o-font-feature-settings: "liga" 1, "onum" 1, "kern" 1;
+        }
+
+        ol,
+        ul {
+            padding-left: 2em;
+        }
+
+        ol ol,
+        ul ul,
+        ul ol,
+        ol ul {
+            margin: 0 0 0.4em 0;
+            padding-left: 2em;
+        }
+
+        dl dt {
+            float: left;
+            clear: left;
+            overflow: hidden;
+            margin-bottom: 1em;
+            width: 180px;
+            text-align: right;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-weight: 700;
+        }
+
+        dl dd {
+            margin-bottom: 1em;
+            margin-left: 200px;
+        }
+
+        li {
+            margin: 0.4em 0;
+        }
+
+        li li {
+            margin: 0;
+        }
+
+        hr {
+            display: block;
+            margin: 1.75em 0;
+            padding: 0;
+            height: 1px;
+            border: 0;
+            border-top: #efefef 1px solid;
+        }
+
+        blockquote {
+            box-sizing: border-box;
+            margin: 1.75em 0 1.75em 0;
+            padding: 0 0 0 1.75em;
+            border-left: #4a4a4a 0.4em solid;
+
+            -moz-box-sizing: border-box;
+        }
+
+        blockquote p {
+            margin: 0.8em 0;
+            font-style: italic;
+        }
+
+        blockquote small {
+            display: inline-block;
+            margin: 0.8em 0 0.8em 1.5em;
+            color: #ccc;
+            font-size: 0.9em;
+        }
+
+        blockquote small:before {
+            content: "\2014 \00A0";
+        }
+
+        blockquote cite {
+            font-weight: 700;
+        }
+
+        blockquote cite a {
+            font-weight: normal;
+        }
+
+        mark {
+            background-color: #fdffb6;
+        }
+
+        code,
+        tt {
+            padding: 1px 3px;
+            border: #e3edf3 1px solid;
+            background: #f7fafb;
+            border-radius: 2px;
+            white-space: pre-wrap;
+            font-family: Inconsolata, monospace, sans-serif;
+            font-size: 0.85em;
+            font-feature-settings: "liga" 0;
+
+            -webkit-font-feature-settings: "liga" 0;
+            -moz-font-feature-settings: "liga" 0;
+        }
+
+        pre {
+            overflow: auto;
+            box-sizing: border-box;
+            margin: 0 0 1.75em 0;
+            padding: 10px;
+            width: 100%;
+            border: #e3edf3 1px solid;
+            background: #f7fafb;
+            border-radius: 3px;
+            white-space: pre;
+            font-family: Inconsolata, monospace, sans-serif;
+            font-size: 0.9em;
+
+            -moz-box-sizing: border-box;
+        }
+
+        pre code,
+        pre tt {
+            padding: 0;
+            border: none;
+            background: transparent;
+            white-space: pre-wrap;
+            font-size: inherit;
+        }
+
+        kbd {
+            display: inline-block;
+            margin-bottom: 0.4em;
+            padding: 1px 8px;
+            border: #ccc 1px solid;
+            background: #f4f4f4;
+            border-radius: 4px;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2),
+            0 1px 0 0 #fff inset;
+            color: #666;
+            text-shadow: #fff 0 1px 0;
+            font-size: 0.9em;
+            font-weight: 700;
+        }
+
+        table {
+            box-sizing: border-box;
+            margin: 1.75em 0;
+            max-width: 100%;
+            width: 100%;
+            background-color: transparent;
+
+            -moz-box-sizing: border-box;
+        }
+
+        table th,
+        table td {
+            padding: 8px;
+            border-top: #efefef 1px solid;
+            vertical-align: top;
+            text-align: left;
+            line-height: 20px;
+        }
+
+        table th {
+            color: #000;
+        }
+
+        table caption + thead tr:first-child th,
+        table caption + thead tr:first-child td,
+        table colgroup + thead tr:first-child th,
+        table colgroup + thead tr:first-child td,
+        table thead:first-child tr:first-child th,
+        table thead:first-child tr:first-child td {
+            border-top: 0;
+        }
+
+        table tbody + tbody {
+            border-top: #efefef 2px solid;
+        }
+
+        table table table {
+            background-color: #fff;
+        }
+
+        table tbody > tr:nth-child(odd) > td,
+        table tbody > tr:nth-child(odd) > th {
+            background-color: #f6f6f6;
+        }
+
+        table.plain tbody > tr:nth-child(odd) > td,
+        table.plain tbody > tr:nth-child(odd) > th {
+            background: transparent;
+        }
+
+        iframe,
+        amp-iframe,
+        .fluid-width-video-wrapper {
+            display: block;
+            margin: 1.75em 0;
+        }
+
+        /* When a video is inside the fitvids wrapper, drop the
+        margin on the iframe, cause it breaks stuff. */
+        .fluid-width-video-wrapper iframe,
+        .fluid-width-video-wrapper amp-iframe {
+            margin: 0;
+        }
+
+        textarea,
+        select,
+        input {
+            margin: 0 0 5px 0;
+            padding: 6px 9px;
+            width: 260px;
+            outline: 0;
+            border: #e7eef2 1px solid;
+            background: #fff;
+            border-radius: 4px;
+            box-shadow: none;
+            font-family: "Open Sans", sans-serif;
+            font-size: 1.6rem;
+            line-height: 1.4em;
+            font-weight: 100;
+
+            -webkit-appearance: none;
+        }
+
+        textarea {
+            min-width: 250px;
+            min-height: 80px;
+            max-width: 340px;
+            width: 100%;
+            height: auto;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="search"]:focus,
+        input[type="tel"]:focus,
+        input[type="url"]:focus,
+        input[type="password"]:focus,
+        input[type="number"]:focus,
+        input[type="date"]:focus,
+        input[type="month"]:focus,
+        input[type="week"]:focus,
+        input[type="time"]:focus,
+        input[type="datetime"]:focus,
+        input[type="datetime-local"]:focus,
+        textarea:focus {
+            outline: none;
+            outline-width: 0;
+            border: #bbc7cc 1px solid;
+            background: #fff;
+        }
+
+        select {
+            width: 270px;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        /* ==========================================================================
+           2. Utilities
+           ========================================================================== */
+
+        /* Clears shit */
+        .clearfix:before,
+        .clearfix:after {
+            content: " ";
+            display: table;
+        }
+        .clearfix:after {
+            clear: both;
+        }
+        .clearfix {
+            zoom: 1;
+        }
+
+        /* ==========================================================================
+           3. AMP Post
+           ========================================================================== */
+
+
+
+        .main-header {
+            position: relative;
+            display: table;
+            overflow: hidden;
+            box-sizing: border-box;
+            width: 100%;
+            height: 50px;
+            background: #5ba4e5 no-repeat center center;
+            background-size: cover;
+            text-align: left;
+
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+
+        .content {
+            background: #fff;
+            padding-top: 15px;
+        }
+        .blog-title,
+        .content {
+            margin: auto;
+            max-width: 600px;
+        }
+
+        .blog-title a {
+            display: block;
+            padding-right: 16px;
+            padding-left: 16px;
+            height: 50px;
+            color: #fff;
+            text-decoration: none;
+            font-family: "Open Sans", sans-serif;
+            font-size: 16px;
+            line-height: 50px;
+            font-weight: 600;
+        }
+
+        .post {
+            position: relative;
+            margin-top: 0;
+            margin-right: 16px;
+            margin-left: 16px;
+            padding-bottom: 0;
+            max-width: 100%;
+            border-bottom: #ebf2f6 1px solid;
+            word-wrap: break-word;
+            font-size: 0.95em;
+            line-height: 1.65em;
+        }
+
+        .post-header {
+            margin-bottom: 1rem;
+        }
+
+        .post-title {
+            margin-bottom: 0;
+        }
+
+        .post-title a {
+            text-decoration: none;
+        }
+
+        .post-meta {
+            display: block;
+            margin: 3px 0 0 0;
+            color: #9eabb3;
+            font-family: "Open Sans", sans-serif;
+            font-size: 1.3rem;
+            line-height: 2.2rem;
+        }
+
+        .post-meta a {
+            color: #9eabb3;
+            text-decoration: none;
+        }
+
+        .post-meta a:hover {
+            text-decoration: underline;
+        }
+
+        .post-meta .author {
+            margin: 0;
+            font-size: 1.3rem;
+            line-height: 1.3em;
+        }
+
+        .post-date {
+            display: inline-block;
+            text-transform: uppercase;
+            white-space: nowrap;
+            font-size: 1.2rem;
+            line-height: 1.2em;
+        }
+
+        .post-image {
+            margin: 0;
+            padding-top: 3rem;
+            padding-bottom: 30px;
+            border-top: 1px #E8E8E8 solid;
+        }
+
+        /* Keep images centered, and allow images wider than the main
+           text column to break out. */
+        .post-content amp-img,
+        .post-content amp-anim {
+            /* Centers an image by (1) pushing its left edge to the
+               center of its container and (2) shifting the entire image
+               in the opposite direction by half its own width.
+               Works for images that are larger than their containers. */
+            position: relative;
+            left: 50%;
+            display: block;
+            padding: 0;
+            min-width: 0;
+            max-width: 112%; /* fallback when calc doesn't work */
+            width: calc(100% + 32px); /* expand with to image + margins */
+            height: auto;
+            transform: translateX(-50%);
+
+            -webkit-transform: translateX(-50%); /* for Safari and iOS */
+            -ms-transform: translateX(-50%); /* for IE9 */
+        }
+
+        .footnotes {
+            font-size: 1.3rem;
+            line-height: 1.6em;
+            font-style: italic;
+        }
+
+        .footnotes li {
+            margin: 0.6rem 0;
+        }
+
+        .footnotes p {
+            margin: 0;
+        }
+
+        .footnotes p a:last-child {
+            text-decoration: none;
+        }
+
+        /* ==========================================================================
+           4. Footer - The bottom the AMP Post
+           ========================================================================== */
+
+        .site-footer {
+            position: relative;
+            margin: 0 auto 20px auto;
+            padding: 1rem 15px;
+            max-width: 600px;
+            color: rgba(0,0,0,0.5);
+            font-family: "Open Sans", sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.75em;
+        }
+
+        .site-footer a {
+            color: rgba(0,0,0,0.5);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .site-footer a:hover {
+            border-bottom: #bbc7cc 1px solid;
+        }
+
+        .poweredby {
+            display: block;
+            float: right;
+            width: 45%;
+            text-align: right;
+        }
+
+        .copyright {
+            display: block;
+            float: left;
+            width: 45%;
+        }
+    </style>
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    
+
+</head>
+
+<body class="amp-template">
+    <header class="main-header">
+        <nav class="blog-title">
+            <a href="../../">Fistful of Cookies</a>
+        </nav>
+    </header>
+
+    <main class="content" role="main">
+        <article class="post">
+
+            <header class="post-header">
+                <h1 class="post-title">Ghost for GitHub Pages Using Cloud 9</h1>
+                <section class="post-meta">
+                    <p class="author">by <a href="../../author/romedtino/">Jerome Tolentino</a></p>
+                    <time class="post-date" datetime="2017-07-26">2017-07-26</time>
+                </section>
+            </header>
+            <section class="post-content">
+
+                <h3 id="soyouwanttostartablog">So you want to start a blog?</h3>
+
+<p>Yes. Yes I do. Although, I had no idea where to start (even though there's thousands of resources on <a href="https://fistfulofcookies-romedtino.c9users.io/ghostgithubcloud9/www.lmgtfy.com">Google</a>). I know I wanted <em>free</em> hosting because I am beyond cheap. I know I wanted the website to at least have SSL because you owe it to yourself to have <em>some</em> level of <del>dignity</del> security. Hey, cool! <a href="https://pages.github.com">GitHub Pages</a> has exactly what I am looking for! Now what blog service do I turn to?</p>
+
+<p>I mean you probably have heard of a plethora of different <em>blog services</em> such as Xanga or LiveJournal just to name a few of the more popular ones ;). However, the ones that caught my eye when I was perusing the depths of the internet were Tumblr, WordPress, Blogger, Jekyll and Ghost. If you can't tell, I did opt for Ghost for these reasons:</p>
+
+<p><strong>Tumblr</strong> - There's just too much going on here and I can't take it seriously. I understand 
+ the reasons why <em>certain</em> people choose Tumblr (questionable if that was Tumblr's initial intention) and it's really more of getting away from the blog mentality with just sharing images, a quick prose or something that doesn't necessarily need to be chunky. In this day and age where people want their information quick and gritty, Tumblr has your back. Also for my use case, certain proxies I have played with for some reason like to block Tumblr so that's just a no go.</p>
+
+<p><strong>WordPress</strong> - WordPress by WordPress<strong>.org</strong> is actually pretty nice but it seems really heavy and cumbersome. I wanted something <em>extremely</em> simple (even though I have probably convoluted my process) but also customizable.</p>
+
+<p><strong>Blogger</strong> - You have to tie this to a Google account and even though I almost have <strong>everything</strong> tied to Google, I wanted to go a different route. Blogger is also pretty different where in that you don't have the ability to host the server on your own. </p>
+
+<p><strong>Jekyll</strong> - You can host on your own, it is open source, it is <em>meant</em> for actually generating blogs or static pages, so why did I not choose Jekyll? Honestly, it's because I tried Ghost first and haven't had the chance to try Jekyll. Also, I have used Node.js before and not really Ruby so I didn't want to learn something on top of another.</p>
+
+<p><strong>Ghost</strong> - Looks cool, decent documentation and examples to get started, and it doesn't seem too hard to set up. Let's do it!</p>
+
+<h3 id="creatingyourblog">Creating your blog</h3>
+
+<p><strong>GitHub Pages</strong></p>
+
+<p>GitHub Pages is awesome. It's a place where you can host static data for either a project or in our case, a blog!</p>
+
+<ol>
+<li>Create a GitHub Pages site <a href="https://pages.github.com/">using these directions</a>. <br>
+<ul><li>Note: Try to use your main account for your blog or prepare to be savvy and do some cleanup before posting your blog (e.g. if your GitHub username is benfranklin, host with your main github pages: <code>benfranklin.github.io</code> as opposed to <code>benfranklin.github.io/bensblogaboutbells</code>)</li></ul></li>
+<li>Leave it blank for now and there's no need to apply any theme since you're most likely going to find your own Ghost theme.</li>
+</ol>
+
+<p><strong>C9.io</strong></p>
+
+<p><amp-img src="https://static.c9.io/nc-3.1.3702-b43a5b7f-wf/static/plugins/c9.profile/static/images/cloud9-logo.svg" alt="C9.io awesome!" width="550" height="347" layout="responsive"></amp-img></p>
+
+<p>Cloud9 is also awesome. It's literally a free online linux workspace you can almost do anything with. I have used it to debug/create my <a href="https://romedtino.github.io">personal website</a> as well as test my <a href="https://play.google.com/store/apps/details?id=com.expandedlabs.kingscupcast&amp;hl=en">Chromecast app - Kings Cup Cast</a>. Both so far have been <code>javascript</code> but you can do A LOT more from <code>C++</code>, <code>Java</code>, <code>Python</code>, etc. The only scary thing here is that they initially ask you for a credit card despite having a free version so watch out for that.</p>
+
+<ol>
+<li><a href="https://c9.io/">https://c9.io/</a>  </li>
+<li>Create a new workspace BUT don't tie it to your GitHub account just yet.  </li>
+<li>C9.io uses Node.js! but by default it uses v4 while you'll need at least 6. So go ahead and get those and set it as default <br>
+<ol><li><code>nvm install 6</code></li>
+<li><code>nvm alias default 6</code></li></ol></li>
+</ol>
+
+<p><strong>Ghost</strong></p>
+
+<p><amp-img src="https://www.cmscritic.com/site/assets/files/5805/ghost_logo_big.png" alt="Ghost.org" width="960" height="576" layout="responsive"></amp-img></p>
+
+<ol>
+<li>You can cheat and just install it via  <code>npm install ghost</code> BUT for some reason I went the hard way and compiled it from source.  </li>
+<li>Visit <a href="https://ghost.org/developers/">https://ghost.org/developers/</a> and grab the zip. By the time of my writing it was <code>wget https://github.com/TryGhost/Ghost/releases/download/1.0.2/Ghost-1.0.2.zip</code>  </li>
+<li><code>unzip Ghost*.zip</code>  </li>
+<li><code>npm install --production</code> <br>
+<ol><li>If you run into any conflicts (I know I did, feel free to just <code>npm uninstall</code> that dependency and use the one Ghost needs. If you need that specific version, then why are you using the same c9 workspace?! :O Make a new one!) You might also need <code>apt get python-devel</code>.</li></ol></li>
+<li>Once ghost is installed, you would have to edit <code>ghost/config.js</code> for cloud 9 specificities that deal with "localhost" and ghosts default URLs. <br>
+<ol><li>Change <code>http//url: 'http://localhost:2368'</code> to <code>url: 'https://' + process.env.C9_HOSTNAME</code></li>
+<li>Change <code>host: '127.0.0.1'</code> to <code>host: process.env.IP</code></li>
+<li>Change <code>port: 2368</code> to <code>port: process.env.PORT</code></li></ol></li>
+</ol>
+
+<p>Now you're all set!</p>
+
+<p><strong>Running Ghost</strong></p>
+
+<p>Once ghost is up and running, simply do <code>npm start</code> and hopefully ghost starts running! Just simply visit your <code>https://WORKSPACE-USERNAME.c9users.io</code> and you should see a Ghost Splash screen! Then just visit <code>https://WORKSPACE-USERNAME.c9users.io/ghost</code> to login. </p>
+
+<p>Phew!</p>
+
+<h3 id="publishingtogithub">Publishing to GitHub</h3>
+
+<p>So you've gotten your blog all nice and nifty, now you want to publish it to your GitHub page. What's nice about c9 is that it also comes with Python pre-installed!</p>
+
+<ol>
+<li>Install this nifty tool someone made that transcribes Ghost blogs into static pages. <br>
+<ol><li><code>pip install buster</code></li></ol></li>
+<li>Now you're ready to summon the GitHub page you had previously created. I decided to put mine within the ghost installation as this makes the next few steps easier (less command line arguments) <br>
+<ol><li><code>git clone git@github.com:username/username.github.io.git static</code></li></ol></li>
+<li>Now let buster generate the static pages <br>
+<ol><li><code>buster generate --domain=https://WORKSPACE-USERNAME.c9users.io</code></li></ol></li>
+<li>Then deploy! <br>
+<ol><li><code>buster deploy</code></li></ol></li>
+</ol>
+
+<p>If things worked out correctly, it should have checked it all in your GitHub page! Yay!</p>
+
+<h3 id="addressingrandomproblems">Addressing random problems</h3>
+
+<p><strong>Problem: You decided to use a project page as opposed to your main page on GitHub to host your blog.</strong></p>
+
+<p>I had this exact problem. <code>buster</code> unfortunately, is not perfect. Currently my <code>/content</code> directory assumes it sits in the root but this isn't always the case (e.g. <code>http://username.github.io/myawesomeblog/content</code>)</p>
+
+<p>My solution is pretty hacky for my taste but for now, it works.</p>
+
+<p><code>sed -i 's:="/content:="/myawseomeblog/content:' ./static/index.html</code></p>
+
+<p>Yea, it's a <code>sed</code> command and I kind of don't like it since I am post processing the output which makes me question if my approach was worth it. I did wrap most of these in my <code>bash_aliases</code> to save more time. Nevertheless, it all seems to work! :D</p>
+
+<p>Thanks for reading!</p>
+
+<p>Resources: <br>
+Ghost + Github: <br>
+<a href="https://stefanscherer.github.io/setup-ghost-for-github-pages/">https://stefanscherer.github.io/setup-ghost-for-github-pages/</a></p>
+
+            </section>
+
+        </article>
+    </main>
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="../../">Fistful of Cookies</a> © 2017</section>
+        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+</body>
