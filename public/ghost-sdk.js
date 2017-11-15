@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var apiUrl = 'https://fistfulofcookies-romedtino.c9users.io/ghost/api/v0.1/',
+    var apiUrl = '//fistfulofcookies-romedtino.c9users.io:8080/ghost/api/v0.1/',
         clientId,
         clientSecret,
         url,
