@@ -4,7 +4,88 @@ Well, hopefully thoughts, stories and ideas.
 
 About what?
 
-Nothing specific exactly! Mostly tech but anything goes!</description><link>http://fistfulofcookies-romedtino.c9users.io:8080/</link><image><url>http://fistfulofcookies-romedtino.c9users.io:8080/favicon.png</url><title>Fistful of Cookies</title><link>http://fistfulofcookies-romedtino.c9users.io:8080/</link></image><generator>Ghost 1.17</generator><lastBuildDate>Thu, 30 Nov 2017 06:32:50 GMT</lastBuildDate><atom:link href="http://fistfulofcookies-romedtino.c9users.io:8080/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>The True Cost of Having a Pet</title><description>&lt;div class="kg-card-markdown"&gt;&lt;p&gt;Ahhh! Puppies are the flippin' &lt;font size="+3"&gt;cutest!&lt;/font&gt;&lt;/p&gt;
+Nothing specific exactly! Mostly tech but anything goes!</description><link>http://fistfulofcookies-romedtino.c9users.io:8080/</link><image><url>http://fistfulofcookies-romedtino.c9users.io:8080/favicon.png</url><title>Fistful of Cookies</title><link>http://fistfulofcookies-romedtino.c9users.io:8080/</link></image><generator>Ghost 1.17</generator><lastBuildDate>Tue, 12 Dec 2017 06:47:41 GMT</lastBuildDate><atom:link href="http://fistfulofcookies-romedtino.c9users.io:8080/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Bad C++ Habits Deployed Projects Should Not Have in 2017.</title><description>&lt;div class="kg-card-markdown"&gt;&lt;h1 id="exhibita"&gt;Exhibit A&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;using namespace&lt;/code&gt; inside a header file.&lt;/p&gt;
+&lt;h2 id="example"&gt;Example&lt;/h2&gt;
+&lt;p&gt;&amp;lt;badheader.h&amp;gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-cpp"&gt;pragma once
+
+using namespace std;
+
+class myheader {
+...
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="whyisthisbad"&gt;Why is this bad?&lt;/h2&gt;
+&lt;p&gt;Adding &lt;code&gt;std&lt;/code&gt; is even worse but that's a whole different story. Look below.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-cpp"&gt;#include &amp;quot;badheader.h&amp;quot;
+
+struct string {
+    const  char * p;
+}
+
+int main() {
+    string&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><link>http://fistfulofcookies-romedtino.c9users.io:8080/bad-c-habits-deployed-projects-should-not-have/</link><guid isPermaLink="false">5a2f55e165408608b59adbc5</guid><category>C++</category><category>Bad Habits</category><category>programming</category><dc:creator>Jerome D Tolentino</dc:creator><pubDate>Tue, 12 Dec 2017 06:45:44 GMT</pubDate><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;h1 id="exhibita"&gt;Exhibit A&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;using namespace&lt;/code&gt; inside a header file.&lt;/p&gt;
+&lt;h2 id="example"&gt;Example&lt;/h2&gt;
+&lt;p&gt;&amp;lt;badheader.h&amp;gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-cpp"&gt;pragma once
+
+using namespace std;
+
+class myheader {
+...
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="whyisthisbad"&gt;Why is this bad?&lt;/h2&gt;
+&lt;p&gt;Adding &lt;code&gt;std&lt;/code&gt; is even worse but that's a whole different story. Look below.&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-cpp"&gt;#include &amp;quot;badheader.h&amp;quot;
+
+struct string {
+    const  char * p;
+}
+
+int main() {
+    string banana; // problem!! which string? std::string? or struct string?
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You'll run into a compiler error since it won't know which &lt;code&gt;string&lt;/code&gt; you are trying to reference. Now imagine this inclusion is fifty layers deep. You can debug and find the root of this but you should have never been in this situation in the first place! Just don't do it!&lt;/p&gt;
+&lt;h1 id="exhibitb"&gt;Exhibit B&lt;/h1&gt;
+&lt;p&gt;Creating SDKs or public header libraries that don't require a namespace path in the include statement.&lt;/p&gt;
+&lt;h2 id="example"&gt;Example&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;#include &amp;quot;MyAwesomeLibrary.h&amp;quot; //please don't!&lt;/code&gt;&lt;br&gt;
+instead use something like&lt;br&gt;
+&lt;code&gt;#include &amp;quot;myAwesomeSauce/MyAwesomeLibrary.h&amp;quot; //better!&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id="whyisthisbad"&gt;Why is this bad?&lt;/h2&gt;
+&lt;p&gt;It is very similar to Exhibit A in nature. If you have a lot libraries in your project there's a decent chance the project has classes with the same names. For example in your project you have a file&lt;br&gt;
+&lt;code&gt;[myproject]/include/LockGuard.h&lt;/code&gt;&lt;br&gt;
+and also a file&lt;br&gt;
+&lt;code&gt;[myproject]/SpecialThreadLibrary/include/LockGuard.h&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Now when you start adding include directories, it is pretty easy to end up saying&lt;br&gt;
+&lt;code&gt;-I[myproject]/include&lt;/code&gt;&lt;br&gt;
+and&lt;br&gt;
+&lt;code&gt;-I[myproject]/SpecialThreadLibrary/include&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Then you start adding this in your program&lt;br&gt;
+&amp;lt;some.cpp&amp;gt;&lt;br&gt;
+&lt;code&gt;include &amp;quot;LockGuard.h&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;How does your compiler know which LockGuard.h you are referring to? This depends on the order of your include directories and usually it's first come, first serve. A good example is the Boost library in which you always do something like&lt;br&gt;
+&lt;code&gt;#include &amp;quot;boost/algorithm/algorithm.hpp&amp;quot;&lt;/code&gt;&lt;br&gt;
+which helps prevent collisions such as this.&lt;/p&gt;
+&lt;h1 id="exhibitc"&gt;Exhibit C&lt;/h1&gt;
+&lt;p&gt;Having multiple classes in one translation unit/CPP file. &lt;strong&gt;BONUS&lt;/strong&gt;: Having your class have a &lt;em&gt;&lt;strong&gt;TOTALLY&lt;/strong&gt;&lt;/em&gt; different name than your translation unit.&lt;/p&gt;
+&lt;h2 id="example"&gt;Example&lt;/h2&gt;
+&lt;p&gt;&amp;lt;Burger.h&amp;gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class="language-cpp"&gt;#pragma once
+class cheese {
+...
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id="whyisthisbad"&gt;Why is this bad?&lt;/h2&gt;
+&lt;p&gt;Compiling and running, it will work albeit less efficient. From a maintenance standpoint, this is a &lt;strong&gt;nightmare&lt;/strong&gt;. Imagine having problems with class cheese and trying to figure out why you can't find &lt;code&gt;cheese.cpp/h&lt;/code&gt; because it is actually under &lt;code&gt;Burger.h&lt;/code&gt;. Will you remember that fact a year or two from now if you need to update &lt;code&gt;class cheese&lt;/code&gt;? Also notice the lowercase of the class name. &lt;em&gt;shudder&lt;/em&gt;. I am unsure who abused you as a child to end up writing code like this but we can get you help!&lt;/p&gt;
+&lt;h1 id="conclusion"&gt;Conclusion&lt;/h1&gt;
+&lt;p&gt;Honestly, I don't think the baseline I am toying with is that old but it's very interesting to see little nuances such as these. Don't get me wrong, the baseline is AMAZING. There's a lot of REALLY smart code in there. A lot of template magic, magical lambdas, and just modern C++ usage in general but it's very surprising to find some really sluggish looking code too. I guess this is just a downside of having multiple individuals/styles work on a large baseline. Regardless, if you're reading this, from this day forward, please don't do the things above! :D&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://i.imgur.com/yQFnbKJ.gif" alt="thumbs up!"&gt;&lt;/p&gt;
+&lt;/div&gt;</content:encoded></item><item><title>The True Cost of Having a Pet</title><description>&lt;div class="kg-card-markdown"&gt;&lt;p&gt;Ahhh! Puppies are the flippin' &lt;font size="+3"&gt;cutest!&lt;/font&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="http://fistfulofcookies-romedtino.c9users.io:8080/content/images/2017/11/theo-pup-1.gif" alt="Theo being cute"&gt;&lt;/p&gt;
 &lt;p&gt;Little Theodore Wylis finds himself surrounded by six mischievous squirrels. For reasons unbeknown to Theo, the squirrels have gathered outside their fluff tree to congregate and attack the almighty Pembroke Welsh Corgi. As he stands in high noon, he gives one final stinky red&lt;/p&gt;&lt;/div&gt;</description><link>http://fistfulofcookies-romedtino.c9users.io:8080/the-true-cost-of-having-a-pet/</link><guid isPermaLink="false">5a0becbb5668de126e6cad74</guid><category>puppy</category><category>pet</category><category>cost</category><category>Theodore Wylis</category><dc:creator>Jerome D Tolentino</dc:creator><pubDate>Wed, 15 Nov 2017 06:43:00 GMT</pubDate><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;p&gt;Ahhh! Puppies are the flippin' &lt;font size="+3"&gt;cutest!&lt;/font&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src="http://fistfulofcookies-romedtino.c9users.io:8080/content/images/2017/11/theo-pup-1.gif" alt="Theo being cute"&gt;&lt;/p&gt;
